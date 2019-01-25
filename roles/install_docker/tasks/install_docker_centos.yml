@@ -1,0 +1,19 @@
+---
+   - name: "Installing Docker Prerequisite packages"
+     yum:
+      name: '{{centos_docker_packages}}'
+      state: latest
+   - name: "Configuring docker-ce repo"
+     get_url:
+      url: '{{centos_docker_repo}}'
+      dest: '{{centos_docker_location}}'
+      mode: '{{centos_docker_get_mode}}'
+   - name: " Installing Docker latest version"
+     yum:
+       name: '{{centos_docker_ce}}'
+       state: present
+   - name: " Starting and Enabling Docker service"
+     service:
+      name: '{{centos_docker_service}}'
+      state: started
+      enabled: yes

@@ -1,0 +1,15 @@
+---
+# vars file for install_docker
+#
+
+centos_docker_service: docker
+centos_docker_packages: ['yum-utils','device-mapper-persistent-data','lvm2']
+centos_docker_repo: https://download.docker.com/linux/centos/docker-ce.repo
+centos_docker_location: /etc/yum.repos.d/docker-ce.repo
+centos_docker_get_mode: 0644
+centos_docker_ce: docker-ce
+
+ubuntu_docker_gpg_key: https://download.docker.com/linux/ubuntu/gpg
+ubuntu_docker_repo: https://download.docker.com/linux/ubuntu
+ubuntu_docker_packages: ['apt-transport-https','ca-certificates','curl','software-properties-common','docker-ce']
+
